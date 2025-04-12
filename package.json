@@ -1,0 +1,55 @@
+{
+  "name": "grainvault",
+  "version": "0.1.0",
+  "description": "Film organization and inventory management",
+  "author": "GrainVault",
+  "license": "MIT",
+  "main": "electron.js",
+  "scripts": {
+    "start": "concurrently \"cd app && npm start\" \"cross-env BROWSER=none NODE_ENV=development electron-forge start\"",
+    "dev": "concurrently \"cd app && npm start\" \"cross-env BROWSER=none NODE_ENV=development electron-forge start\"",
+    "start-prod": "cd app && npm run build && cd .. && cross-env NODE_ENV=production electron-forge start",
+    "build": "cd app && npm run build && cd .. && electron-forge package",
+    "make": "cd app && npm run build && cd .. && electron-forge make",
+    "package": "cd app && npm run build && cd .. && electron-forge package"
+  },
+  "dependencies": {
+    "@electron/rebuild": "^3.7.2",
+    "@electron/remote": "^2.0.10",
+    "electron-rebuild": "^3.2.9",
+    "electron-squirrel-startup": "^1.0.0",
+    "exif-parser": "^0.1.12",
+    "framer-motion": "^10.16.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "sharp": "^0.32.6",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "styled-components": "^6.0.8",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.4.2",
+    "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-rpm": "^6.4.2",
+    "@electron-forge/maker-squirrel": "^6.4.2",
+    "@electron-forge/maker-zip": "^6.4.2",
+    "concurrently": "^8.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^26.2.2",
+    "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+/* Disable all spinner animations across the app */
+@keyframes spinner {
+  0% { transform: none; }
+  100% { transform: none; }
+}
+
+.spinner, 
+[class*="Spinner"],
+div[class*="spinner"] {
+  animation: none !important;
+  border: none !important;
+  display: none !important;
+}
+
+/* Simple loading style */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #333;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+} 
