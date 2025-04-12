@@ -51,31 +51,6 @@ const RollIcon = styled.div`
   color: var(--text-secondary);
 `;
 
-const ImageLoading = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--background-secondary);
-`;
-
-const Spinner = styled.div`
-  width: 30px;
-  height: 30px;
-  border: 3px solid var(--background-primary);
-  border-top-color: var(--accent-color);
-  border-radius: 50%;
-  animation: spinner 1s ease-in-out infinite;
-  
-  @keyframes spinner {
-    to { transform: rotate(360deg); }
-  }
-`;
-
 const CardContent = styled.div`
   padding: 15px;
   flex: 1;
@@ -133,7 +108,6 @@ const DateLabel = styled.span`
 const RollCard = ({ roll, tags = [] }) => {
   const navigate = useNavigate();
   const [imageError, setImageError] = useState(false);
-  const [imageLoading, setImageLoading] = useState(true);
   
   const handleClick = () => {
     navigate(`/roll/${roll.id}`);
@@ -142,11 +116,10 @@ const RollCard = ({ roll, tags = [] }) => {
   const handleImageError = () => {
     console.error(`Failed to load thumbnail: ${roll.thumbnail_path}`);
     setImageError(true);
-    setImageLoading(false);
   };
   
   const handleImageLoad = () => {
-    setImageLoading(false);
+    // Remove the setImageLoading line
   };
   
   // Format date for display

@@ -32,6 +32,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
     "@electron-forge/maker-deb": "^6.4.2",
+    "@electron-forge/maker-dmg": "^7.8.0",
     "@electron-forge/maker-rpm": "^6.4.2",
     "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.4.2",
@@ -39,6 +40,36 @@
     "cross-env": "^7.0.3",
     "electron": "^26.2.2",
     "react-scripts": "^5.0.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": true,
+        "icon": "./app/public/favicon.ico",
+        "name": "GrainVault"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "GrainVault"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "name": "GrainVault",
+            "format": "ULFO"
+          }
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [

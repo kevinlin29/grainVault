@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const ViewerContainer = styled.div`
   display: flex;
@@ -37,20 +37,6 @@ const ImagePlaceholder = styled.div`
   align-items: center;
   justify-content: center;
   color: var(--text-secondary);
-`;
-
-const Spinner = styled.div`
-  width: 30px;
-  height: 30px;
-  border: 3px solid var(--background-primary);
-  border-top-color: var(--accent-color);
-  border-radius: 50%;
-  animation: spinner 1s ease-in-out infinite;
-  margin-bottom: 10px;
-  
-  @keyframes spinner {
-    to { transform: rotate(360deg); }
-  }
 `;
 
 const ThumbnailsContainer = styled.div`

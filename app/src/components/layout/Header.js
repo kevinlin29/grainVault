@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { useTheme } from '../../context/ThemeContext';
 import { useRollContext } from '../../context/RollContext';
@@ -36,28 +36,6 @@ const LogoIcon = styled.div`
 const Navigation = styled.nav`
   display: flex;
   align-items: center;
-`;
-
-const NavLink = styled(Link)`
-  margin-left: 20px;
-  color: var(--text-primary);
-  text-decoration: none;
-  position: relative;
-  
-  &:hover {
-    color: var(--accent-color);
-    text-decoration: none;
-  }
-  
-  &.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--accent-color);
-  }
 `;
 
 const IconButton = styled.button`
